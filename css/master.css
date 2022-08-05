@@ -4,14 +4,18 @@ body {
   font-family: Arial;
   display: flex;
   height: 100vh;
+  position: relative;
 }
 
 .sidebar {
   background-color: #fbfbfb;
 
   width: 20em;
+  height: 100%;
   max-width: 20em;
   min-width: 20em;
+
+  position: fixed;
 
   border-right-style: solid;
   border-right-color: #e4e4e4;
@@ -20,6 +24,7 @@ body {
 .main {
   background-color: #fbfbfb;
   width: 100%;
+  margin-left: 20em;
 }
 
 .container {
@@ -59,4 +64,57 @@ body {
   height: 100%;
   top: 0;
   left: 0;
+}
+
+.hamburger-lines {
+    display: block;
+    height: 26px;
+    width: 32px;
+    padding: 1em;
+    padding-left: 0;
+    /* position: absolute; */
+    top: 17px;
+    left: 20px;
+    /* z-index: 2; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger-lines .line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: #0e2431;
+}
+
+.hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  .sidebar {
+    position:absolute;
+    z-index: 999;
+    left: -20em;
+    /* transform: translateX(-20em); */
+  }
+
+  .main {
+    display: block;
+    width: 100%;
+    margin-left: 0;
+  }
 }
