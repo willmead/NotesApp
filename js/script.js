@@ -12,3 +12,20 @@ function removeSelectedFromAll(){
     noteCard.classList.remove("selected");
   });
 }
+
+
+var openButton = document.getElementById("openbtn");
+var sidebar = document.getElementById('sidebar');
+
+openButton.addEventListener('click', toggleNav);
+
+function toggleNav() {
+  if (sidebar.style.left == "0px") {
+    sidebar.style.left = "-20em";
+    openButton.style.marginLeft = "0em";
+  }
+  else {
+    openButton.style.marginLeft = "20em";
+    sidebar.style.left = "0px";
+  }
+}

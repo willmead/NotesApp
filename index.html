@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NotesApp</title>
     <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <div class="sidebar">
+    <div id="sidebar" class="sidebar">
       <div class="container">
         <h1>Notes</h1>
       </div>
@@ -29,14 +28,7 @@
     </div>
     <div class="main">
       <div class="container">
-        <!-- <h1>Editor</h1> -->
-        <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()"> -->
-        <div class="hamburger-lines">
-          <span class="line line1"></span>
-          <span class="line line2"></span>
-          <span class="line line3"></span>
-        </div>
-        <!-- </a> -->
+        <button id="openbtn">&#9776; Notes</button>
         <textarea></textarea>
       </div>
     </div>
@@ -44,11 +36,11 @@
     <!-- Markdown Editor SimpleMDE -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
     <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+
+    <!-- Custom Scripts -->
     <script>
       var simplemde = new SimpleMDE();
     </script>
-    <script type="text/javascript" src="js/script.js">
-
-    </script>
+    <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>
