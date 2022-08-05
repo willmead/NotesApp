@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>NotesApp</title>
+    <link rel="stylesheet" href="css/master.css">
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="container">
+        <h1>Notes</h1>
+      </div>
+      <ul class="notes-list">
+        <li>
+          <div class="note-card">
+            <h3>Note Title</h3>
+            <p>Note content...</p>
+          </div>
+        </li>
+        <li>
+          <div class="note-card selected">
+            <h3>Note Title</h3>
+            <p>Note content...</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="main">
+      <div class="container">
+        <h1>Editor</h1>
+        <textarea></textarea>
+      </div>
+    </div>
+
+    <!-- Markdown Editor SimpleMDE -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script>
+      var simplemde = new SimpleMDE();
+    </script>
+    <script type="text/javascript" src="js/script.js">
+
+    </script>
+  </body>
+</html>
