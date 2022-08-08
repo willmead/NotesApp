@@ -10,21 +10,20 @@ body {
 .sidebar {
   background-color: #fbfbfb;
 
-  width: 20em;
+  width: 15em;
   height: 100%;
-  max-width: 20em;
-  min-width: 20em;
+  max-width: 15em;
+  min-width: 15em;
 
   position: fixed;
 
   border-right-style: solid;
   border-right-color: #e4e4e4;
 }
-
-.main {
+#main {
   background-color: #fbfbfb;
   width: 100%;
-  margin-left: 20em;
+  margin-left: 15em;
 }
 
 .container {
@@ -94,7 +93,7 @@ body {
     left: -20em;
   }
 
-  .main {
+  #main {
     display: block;
     width: 100%;
     margin-left: 0;

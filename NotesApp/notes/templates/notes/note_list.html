@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotesApp</title>
+    <link rel="stylesheet" href="{% static 'notes/master.css' %}">
+    <script src="https://cdn.jsdelivr.net/highlight.js/latest/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/latest/styles/github.min.css">
+  </head>
+  <body>
+    <div id="sidebar" class="sidebar">
+      <div class="container">
+        <h1>Notes</h1>
+      </div>
+      <ul class="notes-list">
+        {% for note in object_list %}
+        <li>
+          <div class="note-card">
+            <h3>{{ note.get_title }} </h3>
+            <p>{{ note.get_subtitle }}</p>
+            <input type="hidden" id="{{ note.id }}" class="id" value="{{ note.id }}">
+          </div>
+        </li>
+        {% empty %}
+            <li>No notes yet.</li>
+        {% endfor %}
+
+      </ul>
+    </div>
+    <div id="main">
+      <div class="container">
+        <button id="openbtn">&#9776; Notes</button>
+        <textarea></textarea>
+      </div>
+    </div>
+
+    <!-- Markdown Editor SimpleMDE -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+
+    <!-- Custom Scripts -->
+
+    <script type="text/javascript" src="{% static 'notes/script.js' %}"></script>
+  </body>
+</html>
