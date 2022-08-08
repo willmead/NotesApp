@@ -1,3 +1,5 @@
+var currentID = 0;
+
 var simplemde = new SimpleMDE({
   renderingConfig: {
     codeSyntaxHighlighting: true
@@ -7,6 +9,32 @@ var simplemde = new SimpleMDE({
             "code", "image", "table", "horizontal-rule", "|",
             "preview", "side-by-side", "fullscreen"]
 });
+
+simplemde.codemirror.on("change", function(){
+  var id = currentID;
+  data = JSON.stringify({
+        ID: id,
+        TEXT: simplemde.value()
+      })
+      
+  let csrftoken = getCookie('csrftoken');
+
+  var opts = {
+    method: 'POST',
+    body: data,
+    headers: {'Accept': 'application/json, text/plain, */*',
+              'Content-Type': 'application/json',
+              "X-CSRFToken": csrftoken }
+  };
+
+  fetch("/save", opts)
+      .then((response) => response.json())
+      .then((result_data) => {
+        console.log(result_data);
+      });
+
+});
+
 var noteCards = Array.prototype.slice.call(document.getElementsByClassName("note-card"));
 
 function getCookie(name) {
@@ -30,6 +58,7 @@ noteCards.forEach(function(noteCard){
     this.classList.toggle("selected");
 
     var id = noteCard.getElementsByClassName("id")[0].value;
+    currentID = id;
     data = JSON.stringify({
           ID: id,
         })
