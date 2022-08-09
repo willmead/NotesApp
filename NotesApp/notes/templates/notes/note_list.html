@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/latest/styles/github.min.css">
   </head>
   <body>
+    {% csrf_token %}
     <div id="sidebar" class="sidebar">
       <div class="container">
         <h1>Notes</h1>
@@ -18,10 +19,9 @@
       <ul class="notes-list">
         {% for note in object_list %}
         <li>
-          <div class="note-card">
+          <div class="note-card" id="{{ note.id }}">
             <h3>{{ note.get_title }} </h3>
             <p>{{ note.get_subtitle }}</p>
-            <input type="hidden" id="{{ note.id }}" class="id" value="{{ note.id }}">
           </div>
         </li>
         {% empty %}
@@ -42,7 +42,9 @@
     <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 
     <!-- Custom Scripts -->
-
+    <script type="text/javascript" src="{% static 'notes/ui.js' %}"></script>
+    <script type="text/javascript" src="{% static 'notes/utility.js' %}"></script>
+    <script type="text/javascript" src="{% static 'notes/notesAPI.js' %}"></script>
     <script type="text/javascript" src="{% static 'notes/script.js' %}"></script>
   </body>
 </html>

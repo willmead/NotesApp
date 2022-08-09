@@ -11,7 +11,7 @@ class NoteListView(generic.ListView):
 
 def get_note(request):
     body = json.loads(request.body.decode("utf-8"))
-    data = {"note": Note.objects.get(pk=int(body["ID"])).text}
+    data = {"text": Note.objects.get(pk=int(body["ID"])).text}
     return JsonResponse(data)
 
 

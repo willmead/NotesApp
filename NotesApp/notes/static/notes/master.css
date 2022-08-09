@@ -82,15 +82,14 @@ body {
 }
 
 .open {
-  left: 0;
+  visibility: visible !important;
 }
 
 /* On screens that are 600px or less, set the background color to olive */
 @media screen and (max-width: 768px) {
   .sidebar {
-    position:absolute;
     z-index: 999;
-    left: -20em;
+    visibility: hidden;
   }
 
   #main {

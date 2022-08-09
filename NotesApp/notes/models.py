@@ -6,12 +6,11 @@ class Note(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def get_title(self):
-        return self.text.split('\n')[0]
+        return self.text.split("\n")[0]
 
     def get_subtitle(self):
-        for line in self.text.split('\n')[1:]:
+        for line in self.text.split("\n")[1:]:
             if line.strip() != "":
-                print(line)
                 return line[:20]
 
     def __str__(self):
